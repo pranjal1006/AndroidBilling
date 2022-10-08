@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newBillFragmentMain">
+
+    <fragment
+        android:id="@+id/newBillFragmentMain"
+        android:name="com.billingApp.ui.NewBillFragmentMain"
+        android:label="fragment_new_bill_main"
+        tools:layout="@layout/fragment_new_bill_main" >
+        <action
+            android:id="@+id/action_newBillFragmentMain_to_newBillCategoryFragment"
+            app:destination="@id/newBillCategoryFragment" />
+        <action
+            android:id="@+id/action_newBillFragmentMain_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBillItemFragment"
+        android:name="com.billingApp.ui.NewBillItemFragment"
+        android:label="fragment_new_bill_item"
+        tools:layout="@layout/fragment_new_bill_item" >
+        <action
+            android:id="@+id/action_newBillItemFragment_to_newBillSizeFragment"
+            app:destination="@id/newBillSizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBillProductFragment"
+        android:name="com.billingApp.ui.NewBillProductFragment"
+        android:label="fragment_new_bill_product"
+        tools:layout="@layout/fragment_new_bill_product" >
+        <action
+            android:id="@+id/action_newBillProductFragment_to_newBillItemFragment"
+            app:destination="@id/newBillItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBillSizeFragment"
+        android:name="com.billingApp.ui.NewBillSizeFragment"
+        android:label="fragment_new_bill_size"
+        tools:layout="@layout/fragment_new_bill_size" >
+        <action
+            android:id="@+id/action_newBillSizeFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBillCategoryFragment"
+        android:name="com.billingApp.ui.NewBillCategoryFragment"
+        android:label="fragment_new_bill_category"
+        tools:layout="@layout/fragment_new_bill_category" >
+        <action
+            android:id="@+id/action_newBillCategoryFragment_to_newBillProductFragment"
+            app:destination="@id/newBillProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.billingApp.ui.ScanFragment"
+        android:label="fragment_scan"
+        tools:layout="@layout/fragment_scan" >
+        <action
+            android:id="@+id/action_scanFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.billingApp.ui.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_to_newBillFragmentMain"
+            app:destination="@id/newBillFragmentMain" />
+    </fragment>
+</navigation>
